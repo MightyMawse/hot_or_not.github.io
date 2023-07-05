@@ -11,8 +11,8 @@ async function HTTPPost(ip){
     const response = await fetch("http://124.183.24.71:25565/", {
         method: "POST",
         headers:{
-            'Content-Type':'application/json',
-            'Accept':'application/json'
+            'Content-Type':'text/plain',
+            'Accept':'text/plain'
         },
         body: encoded
     })
