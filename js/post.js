@@ -5,16 +5,21 @@ async function HTTPPost(ip){
     };
 
     var jRequest = JSON.stringify(requestObj)
-    var b64Request = btoa(jRequest);
-    //console.log();
+    var encoded = encodeURIComponent(jRequest);
+    console.log(jRequest);
+    console.log(encoded);
     const response = await fetch("http://124.183.24.71:25565/", {
         method: "POST",
         headers:{
-            'Content-Type':'text/plain'
+            'Content-Type':'application/json',
+            'Accept':'application/json'
         },
-        body: jRequest
+        body: encoded
+    })
+    .catch(error => {
+        console.log(error);
     });
-    const content = await response.text();
+    const content = await response.json();
     console.log(content);
 
     var callbackObj = JSON.parse(content);
