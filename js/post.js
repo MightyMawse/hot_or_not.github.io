@@ -12,7 +12,7 @@ async function HTTPPost(ip){
             'Content-Type':'text/plain',
             'Accept':'text/plain'
         },
-        body: encoded
+        body: jRequest
     })
     .catch(error => {
         console.log(error);
