@@ -7,7 +7,7 @@ async function HTTPPost(ip){
     var jRequest = JSON.stringify(requestObj)
     var b64Request = btoa(jRequest);
     //console.log();
-    const response = await fetch("http://localhost:8000/", {
+    const response = await fetch("http://124.183.24.71:25565/", {
         method: "POST",
         headers:{
             'Content-Type':'text/plain'
