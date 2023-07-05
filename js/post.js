@@ -5,9 +5,7 @@ async function HTTPPost(ip){
     };
 
     var jRequest = JSON.stringify(requestObj)
-    var encoded = encodeURIComponent(jRequest);
     console.log(jRequest);
-    console.log(encoded);
     const response = await fetch("http://124.183.24.71:25565/", {
         method: "POST",
         headers:{
