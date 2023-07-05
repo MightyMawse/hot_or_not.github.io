@@ -10,14 +10,13 @@ async function HTTPPost(ip){
         method: "POST",
         headers:{
             'Content-Type':'text/plain',
-            'Accept':'text/plain'
         },
         body: jRequest
     })
     .catch(error => {
         console.log(error);
     });
-    const content = await response.json();
+    const content = await response.text();
     console.log(content);
 
     var callbackObj = JSON.parse(content);
