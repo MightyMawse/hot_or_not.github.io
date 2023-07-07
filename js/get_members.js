@@ -29,8 +29,8 @@ function getmembers(){
     // Believe me, i didnt want to do it this way!
 
     var rndIndex = Math.floor(Math.random() * allNames.length);
-    var rndImg1 = allNames[rndIndex];
-    var rndImg2 = allNames[rndIndex];
+    var rndImg1 = allNames[Math.floor(Math.random() * allNames.length)];
+    var rndImg2 = allNames[Math.floor(Math.random() * allNames.length)];
 
     while(rndImg1 == rndImg2){
         rndImg2 = allNames[Math.floor(Math.random() * allNames.length)];
